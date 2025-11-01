@@ -229,10 +229,10 @@ Test xem kết nối database có thành công không:
 ```javascript
 sequelize.authenticate()
   .then(() => {
-    console.log('✅ Database connected successfully!');
+    console.log('Database connected successfully!');
   })
   .catch(err => {
-    console.error('❌ Unable to connect:', err);
+    console.error('Unable to connect:', err);
   });
 ```
 

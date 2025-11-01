@@ -30,8 +30,8 @@ app.use((req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`🚀 Server running on http://localhost:${PORT}`);
-  console.log(`⚠️  Using memory array - data will be lost after restart`);
+  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Using memory array - data will be lost after restart`);
 });
 
 module.exports = app;

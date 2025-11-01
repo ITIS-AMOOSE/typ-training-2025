@@ -335,16 +335,4 @@ node_modules/
 }
 ```
 
-### Packages quan trọng
-
-| Package | Mục đích |
-|---------|----------|
-| express | Web framework |
-| dotenv | Environment variables |
-| cors | Cross-Origin Resource Sharing |
-| mongoose | MongoDB ORM |
-| jsonwebtoken | JWT authentication |
-| bcrypt | Mã hóa password |
-
-
 ### Link video demo phần 1: https://youtu.be/4_b0ByVvoPc

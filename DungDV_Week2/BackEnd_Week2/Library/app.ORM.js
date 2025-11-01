@@ -33,8 +33,8 @@ app.use((req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`🚀 Server running on http://localhost:${PORT}`);
-  console.log(`📚 Database: ${process.env.DB_NAME || 'library_db'}`);
+  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Database: ${process.env.DB_NAME || 'library_db'}`);
 });
 
 module.exports = app;
