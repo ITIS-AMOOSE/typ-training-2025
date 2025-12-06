@@ -7,7 +7,7 @@ const bookProtectedRoutes = require('./src/routes/book.routes.protected');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// CORS middleware
+// CORS middleware - Cho phép Frontend gọi API
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', 'http://localhost:5173');
   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
@@ -22,14 +22,12 @@ app.use(express.json());
 
 app.get('/', (req, res) => {
   res.json({ 
-    message: 'Welcome to Library API with JWT Authentication',
+    message: 'Welcome to Library API with JWT Authentication - Demo Backend',
     endpoints: {
-      // Public endpoints
       public: {
         getAll: 'GET /api/books',
         getById: 'GET /api/books/:id'
       },
-      // Auth endpoints
       auth: {
         register: 'POST /api/auth/register',
         login: 'POST /api/auth/login',
@@ -37,7 +35,6 @@ app.get('/', (req, res) => {
         refresh: 'POST /api/auth/refresh',
         logout: 'POST /api/auth/logout'
       },
-      // Protected endpoints (requires token)
       protected: {
         getAll: 'GET /api/books-protected',
         getById: 'GET /api/books-protected/:id',
@@ -50,13 +47,13 @@ app.get('/', (req, res) => {
   });
 });
 
-// Public routes (không cần đăng nhập)
+// Public routes
 app.use('/api/books', bookRoutes);
 
 // Auth routes
 app.use('/api/auth', authRoutes);
 
-// Protected routes (cần đăng nhập)
+// Protected routes
 app.use('/api/books-protected', bookProtectedRoutes);
 
 app.use((req, res) => {
@@ -67,10 +64,10 @@ app.use((req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-  console.log(`Using memory array - data will be lost after restart`);
+  console.log(`Backend Server running on http://localhost:${PORT}`);
+  console.log(`API Documentation: http://localhost:${PORT}`);
+  console.log(`Note: Data is stored in memory - will be lost after restart`);
 });
 
 module.exports = app;
-
 
